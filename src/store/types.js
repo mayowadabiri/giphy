@@ -1,0 +1,7 @@
+export const FETCH__GIFS__START = "FETCH__GIFS__START";
+export const FETCH__GIFS__SUCCESS = "FETCH__GIFS__SUCCESS";
+export const FETCH__GIFS__FAILED = "FETCH__GIFS__FAILED";
+
+export const FETCH__GIF__START = "FETCH__GIF__START";
+export const FETCH__GIF__SUCCESS = "FETCH__GIF__SUCCESS";
+export const FETCH__GIF__FAILED = "FETCH__GIF__FAILED";

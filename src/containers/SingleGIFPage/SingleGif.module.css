@@ -1,0 +1,61 @@
+.single__section {
+  width: 100%;
+}
+.gif__row {
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gif__user {
+  width: 50%;
+  text-align: center;
+}
+.gif__user__username {
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  /* margin-bottom: 3rem; */
+}
+.gif__user__link:link,
+.gif__user__link:visited {
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background-color: #7ed56f;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  display: inline-block;
+  backface-visibility: hidden;
+  transition:  all .4s;
+}
+.gif__user__link:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 1rem 2rem rgba(153, 153, 153, 0.2);
+}
+
+.gif__user__link:active{
+    transform: translateY(0);
+}
+
+.gif__user__img {
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+}
+
+.gif__container {
+  width: 70rem;
+  /* height: 50rem; */
+  text-align: center;
+}
+
+.gif__img {
+  width: 45rem;
+  height: 48rem;
+}
+
+.gif__text {
+  font-size: 3rem;
+}

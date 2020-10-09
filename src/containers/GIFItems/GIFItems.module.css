@@ -1,0 +1,9 @@
+.gifs{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    /* grid-template-rows: 4rem 4rem 4rem; */
+    column-gap: 2rem;
+    row-gap: 4rem;
+    /* background-color: #999; */
+    padding: 6rem;
+}

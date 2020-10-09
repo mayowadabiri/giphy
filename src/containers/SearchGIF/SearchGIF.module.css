@@ -1,0 +1,14 @@
+.search__gif {
+  width: 95%;
+  margin: 4rem auto;
+}
+
+.search__content {
+  justify-content: center;
+  font-size: 3.5rem;
+  margin: 8rem 0;
+  display: flex;
+}
+
+.gifs__container {
+}
