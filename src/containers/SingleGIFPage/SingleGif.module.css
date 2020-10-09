@@ -17,6 +17,8 @@
   letter-spacing: 0.5rem;
   /* margin-bottom: 3rem; */
 }
+
+.gif__user__link,
 .gif__user__link:link,
 .gif__user__link:visited {
   font-size: 2rem;
@@ -57,5 +59,5 @@
 }
 
 .gif__text {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }

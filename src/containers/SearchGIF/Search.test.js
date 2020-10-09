@@ -9,7 +9,7 @@ export const searchGIFconnect = connect(SearchGIF);
 
 configure({ adapter: new Adapter() });
 
-describe("<Seach />", () => {
+describe("<SearchGIF />", () => {
   it("should contain search field", () => {
     const wrapper = shallow(<searchGIFconnect />);
     expect(wrapper.find(Search));

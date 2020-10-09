@@ -4,35 +4,53 @@ import Search from "../Search/Search";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 import GIFItems from "../GIFItems/GIFItems";
+import Modal from "../../components/Modal/Modal";
 
 const SearchGIF = (props) => {
   const [value, setValue] = useState("");
+  const [show, setShow] = useState(false);
 
   const changeHandler = ({ target }) => {
     setValue(target.value);
   };
 
+  // function to fetch all gifs by search value
   const fetchGifHandler = (event) => {
     event.preventDefault();
     setValue("");
     props.onfetchGifs(value);
+    setShow(true);
   };
+
+  const modal = props.onLoad ? <Modal show={show}>Loading gifs</Modal> : null;
+
   return (
-    <div className={classes.search__gif}>
-      <h3 className={["heading", classes.search__content].join(" ")}>Search Your Favourite GIF Now</h3>
-      <Search
-        value={value}
-        changeValue={changeHandler}
-        gifFetch={fetchGifHandler}
-      />
-      <div className={classes.gifs__container}>
-        <GIFItems />
+    <>
+      {modal}
+      <div className={classes.search__gif}>
+        <h3 className={["heading", classes.search__content].join(" ")}>
+          Search Your Favourite GIF Now
+        </h3>
+        <Search
+          value={value}
+          changeValue={changeHandler}
+          gifFetch={fetchGifHandler}
+        />
+        <div className={classes.gifs__container}>
+          <GIFItems />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapStateToProps = (state) => {
+  return {
+    onLoad: state.gif.loading,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
   return {
     onfetchGifs: (value) => {
       dispatch(actions.fetchGifs(value));
@@ -40,4 +58,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(SearchGIF);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchGIF);

@@ -1,5 +1,6 @@
 import * as types from "./types";
 import axios from "axios";
+import {apikey} from "../apiKey"
 
 export const fetchGifsStart = () => {
   return {
@@ -20,11 +21,12 @@ export const fetchGifsFailed = () => {
   };
 };
 
+// Action to fetch gifs with the search value and a limit of 12 gifs
 export const fetchGifs = (search) => (dispatch) => {
   dispatch(fetchGifsStart());
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/search?api_key=eEfp97DSK86cvbquGuAjOqAvL0Y0tbQK&q=${search}&limit=10&offset=0&rating=Y&lang=en`
+      `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${search}&limit=12&offset=0&rating=Y&lang=en`
     )
     .then((result) => {
       dispatch(fetchGifsSuccess(result.data.data));
@@ -53,11 +55,12 @@ export const fetchGifFailed = () => {
   };
 };
 
+// Action to fetch a single gif by id 
 export const fetchGif = (id) => (dispatch) => {
   dispatch(fetchGifStart());
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/${id}?api_key=eEfp97DSK86cvbquGuAjOqAvL0Y0tbQK&`
+      `https://api.giphy.com/v1/gifs/${id}?api_key=${apikey}`
     )
     .then((result) => {
       dispatch(fetchGifSuccess(result.data.data));

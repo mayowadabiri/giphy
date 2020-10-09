@@ -2,6 +2,7 @@ import * as types from "./types";
 
 const initalState = {
   gifs: [],
+  
   gif: {
     images:{
       original : {}
